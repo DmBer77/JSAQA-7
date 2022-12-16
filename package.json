@@ -1,0 +1,18 @@
+{
+  "name": "jsaqa-7",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "eslint",
+    "prettier": "prettier"
+  },
+  "author": "DmBer",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^12.1.0",
+    "eslint": "^8.29.0",
+    "prettier": "^2.8.1"
+  }
+}

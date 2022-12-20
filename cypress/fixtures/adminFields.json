@@ -1,0 +1,5 @@
+{
+  "address": "qamid.tmweb.ru/admin/",
+  "login": ".login__input",
+  "accept": ".login__button"
+}

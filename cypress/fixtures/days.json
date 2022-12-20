@@ -1,0 +1,23 @@
+[
+  {
+    "day": "a.page-nav__day:nth-of-type(1)"
+  },
+  {
+    "day": "a.page-nav__day:nth-of-type(2)"
+  },
+  {
+    "day": "a.page-nav__day:nth-of-type(3)"
+  },
+  {
+    "day": "a.page-nav__day:nth-of-type(4)"
+  },
+  {
+    "day": "a.page-nav__day:nth-of-type(5)"
+  },
+  {
+    "day": "a.page-nav__day:nth-of-type(6)"
+  },
+  {
+    "day": "a.page-nav__day:nth-of-type(7)"
+  }
+]

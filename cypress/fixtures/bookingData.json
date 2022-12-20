@@ -1,0 +1,6 @@
+{
+  "address": "http://qamid.tmweb.ru/client/index.php",
+  "film": ".movie",
+  "filmNonActive": "body > main > section:nth-child(2) > div:nth-child(3) > ul > li",
+  "accept": ".acceptin-button"
+}

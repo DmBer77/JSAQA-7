@@ -6,7 +6,8 @@
   "scripts": {
     "test": "npx cypress open",
     "eslint": "eslint",
-    "prettier": "prettier"
+    "prettier": "prettier",
+    "cloud:test": "npx cypress run --record --key 0f6050dc-575c-4655-b4a5-efbb385aa99a"
   },
   "author": "DmBer",
   "license": "ISC",

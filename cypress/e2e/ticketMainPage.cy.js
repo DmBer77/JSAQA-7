@@ -1,8 +1,8 @@
-describe('Movie tickets tests', () => {
+const movie = require('../fixtures/bookingData.json');
+const seats = require('../fixtures/seats.json');
+const days = require('../fixtures/days.json');
 
-    const movie = require('../fixtures/bookingData.json');
-    const seats = require('../fixtures/seats.json');
-    const days = require('../fixtures/days.json');
+describe('Movie tickets tests', () => {
 
     let randomDay;
     let randomSeat;
@@ -14,39 +14,37 @@ describe('Movie tickets tests', () => {
         cy.get(movie.film).first().contains('19:00').click();
     });
 
-    it.skip('First test - positive', async () => {
-        // cy.visit(movie.address);
-        // cy.get(days[randomDay].day).click();
-        // cy.get(movie.film).first().contains('19:00').click();
-        // randomSeat = [Math.floor(Math.random() * seats.length)];
-        cy.get(seats[0].seat).click();
+    it('First test - positive', () => {
+        randomSeat = [Math.floor(Math.random() * seats.length)];
+        cy.get(seats[randomSeat].seat).click();
         cy.get(movie.accept).click();
         cy.contains('Вы выбрали билеты:').should('be.visible');
     });
 
-    it('Second test (book two tickets) - positive', async () => {
-        // randomSeat = [Math.floor(Math.random() * seats.length)];
-        cy.get(seats[2].seat).click();
-        // randomSeat = [Math.floor(Math.random() * seats.length)];
-        cy.get(seats[3].seat).click();
+    it('Second test (book two tickets) - positive', () => {
+        randomSeat = [Math.floor(Math.random() * seats.length)];
+        cy.get(seats[randomSeat].seat).click();
+        randomSeat = [Math.floor(Math.random() * seats.length)];
+        cy.get(seats[randomSeat].seat).click();
         cy.get(movie.accept).click();
         cy.contains('Вы выбрали билеты:').should('be.visible');
     });
 
-    it.skip('Third test (try to book two tickets, but click twice to one) - negative', async () => {
+    it('Third test (try to book two tickets, but click twice to one) - negative', () => {
         randomSeat = [Math.floor(Math.random() * seats.length)];
         cy.log(randomSeat);
-        cy.get(seats[4].seat).click();
+        cy.get(seats[randomSeat].seat).click();
         cy.log(randomSeat);
-        cy.get(seats[4].seat).click();
+        cy.get(seats[randomSeat].seat).click();
         cy.get(movie.accept).should('be.disabled');
     });
 
-    it.skip('Fourth test (try to select non active time) - negative', async () => {
-        cy.visit(movie.address);
-        cy.get(days[0].day).click();
-        cy.get(movie.filmNonActive).should('be.disabled');
-    });
 });
+
+// it('Fourth test (try to select non active time) - negative', () => {
+//     cy.visit(movie.address);
+//     cy.get(days[0].day).click();
+//     cy.get(movie.film).last().contains('10:00').should('be.disabled');
+// });
 
 
